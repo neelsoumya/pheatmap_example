@@ -103,11 +103,19 @@ labels_row = c("", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 pheatmap(test, annotation_col = annotation_col, labels_row = labels_row)
 
 
+#####################################################
+# Morpheus style heatmap that looks prettier
+#####################################################
+pheatmap(test, annotation_col = annotation_col, labels_row = labels_row,
+         show_colnames = FALSE,
+         fontsize = 10, cellwidth = 3, cellheight = 8#,filename = "Metagene_score.pdf"
+         )
+
 ####################################################
 # Specifying clustering from distance matrix
 ####################################################
-drows = dist(test, method = "minkowski")
-dcols = dist(t(test), method = "minkowski")
+drows = dist(test, method = "minkowski", p=1.4)
+dcols = dist(t(test), method = "minkowski", p=1.4)
 pheatmap(test, clustering_distance_rows = drows, clustering_distance_cols = dcols)
 
 #########################################################################
