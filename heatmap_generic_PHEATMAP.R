@@ -87,9 +87,12 @@ pheatmap(test, annotation_col = annotation_col, annotation_row = annotation_row,
          annotation_colors = ann_colors)
 pheatmap(test, annotation_col = annotation_col, annotation_colors = ann_colors[2])
 
-##########################
+###############################
 # Gaps in heatmaps
-##########################
+# AND
+# do not cluster rows
+#  using cluster_rows = FALSE
+###############################
 
 pheatmap(test, annotation_col = annotation_col, cluster_rows = FALSE, gaps_row = c(10, 14))
 pheatmap(test, annotation_col = annotation_col, cluster_rows = FALSE, gaps_row = c(10, 14),
